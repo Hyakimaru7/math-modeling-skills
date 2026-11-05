@@ -4,13 +4,12 @@ MathModeling Skills 是一套用于数学建模比赛的 Codex 技能和 Python 
 
 在 Codex 中，skills 指导赛题理解、方法选择、代码编写和正文撰写；Python 命令负责执行计算、保存结果、检查数值和构建 PDF。每次运行都保留输入、代码版本、求解状态及产物记录。
 
-当前内置整数生产配置和日频预测两个参考模型，也提供可运行的自定义适配器。其他赛题可以按相同接口编写模型，再使用已有的核验、图表和论文工具。
+当前支持整数生产配置和日频预测，也提供自定义模型接口。其他赛题可以按相同接口编写模型，再使用已有的核验、图表和论文工具。
 
 ## 目录
 
 - [功能范围](#功能范围)
 - [安装](#安装)
-- [先运行一个完整案例](#先运行一个完整案例)
 - [在 Codex 中使用](#在-codex-中使用)
 - [八个 skills 的分工](#八个-skills-的分工)
 - [处理自己的赛题](#处理自己的赛题)
@@ -18,7 +17,7 @@ MathModeling Skills 是一套用于数学建模比赛的 Codex 技能和 Python 
 - [检查进度、恢复任务和更新结果](#检查进度恢复任务和更新结果)
 - [编写自定义模型](#编写自定义模型)
 - [命令说明](#命令说明)
-- [案例和验证结果](#案例和验证结果)
+- [测试](#测试)
 - [项目结构](#项目结构)
 - [常见问题](#常见问题)
 - [参考资料与许可证](#参考资料与许可证)
@@ -38,7 +37,7 @@ MathModeling Skills 是一套用于数学建模比赛的 Codex 技能和 Python 
 
 输入或代码变化后，运行器会重建受影响阶段及其下游。只修改正文时，可以复用已经完成的计算。生成文件被删除或改写后，完整性检查也会发现变化。
 
-项目使用本地 Python 运行模型。执行已有案例不需要模型 API key；自然语言分析与撰稿使用当前 Codex 会话提供的能力。CLI 接收结构化输入，原始 PDF、Excel 和复杂附件由 Codex 与数据处理代码读取、解释和转换。
+项目使用本地 Python 运行模型。执行已配置的模型不需要模型 API key；自然语言分析与撰稿使用当前 Codex 会话提供的能力。CLI 接收结构化输入，原始 PDF、Excel 和复杂附件由 Codex 与数据处理代码读取、解释和转换。
 
 ## 安装
 
@@ -48,7 +47,7 @@ MathModeling Skills 是一套用于数学建模比赛的 Codex 技能和 Python 
 - NumPy、SciPy、Matplotlib、Jinja2、ReportLab 和 pypdf，由项目依赖配置安装。
 - 使用中文 LaTeX 排版时，需要 XeLaTeX、ctex 和 Fandol 字体，可通过 TeX Live、MacTeX 或 MiKTeX 安装。
 
-交付验证使用 Python 3.12；具体依赖版本见 [验证记录](VALIDATION.md)。
+项目依赖的版本范围见 `pyproject.toml`。
 
 ### 获取项目并安装依赖
 
@@ -86,10 +85,10 @@ mm doctor
 
 ```bash
 # 使用 LaTeX 排版
-mm run runs/allocation --engine xelatex
+mm run runs/my-contest --engine xelatex
 
 # 使用无需 TeX 的便携预览
-mm run runs/allocation --engine reportlab
+mm run runs/my-contest --engine reportlab
 ```
 
 便携预览适合检查内容，公式以原始表达显示。包含正式数学公式的排版建议使用 XeLaTeX。当前模板是中文训练模板，参加比赛时应按赛事和年份核对、调整格式。
@@ -100,38 +99,6 @@ mm run runs/allocation --engine reportlab
 python -m pip install -r requirements-lock.txt
 python -m pip install --no-deps -e .
 ```
-
-## 先运行一个完整案例
-
-下面的命令会创建独立工作区，完成计算、核验和论文构建：
-
-```bash
-mm init runs/allocation --case allocation
-mm run runs/allocation
-mm audit runs/allocation
-```
-
-运行结束后，可以先查看：
-
-- `runs/allocation/solution.json`：生产数量、利润、基线与情景结果。
-- `runs/allocation/validation.json`：各项自动检查的结果。
-- `runs/allocation/paper/paper.pdf`：生成的论文。
-- `runs/allocation/paper/manuscript.md`：便于阅读的正文。
-- `runs/allocation/review.json`：一致性检查和待人工审阅项。
-
-该案例的最优生产数量为 `(9, 7, 0)`，总利润为 `605`。运行器会复算资源用量和目标值，并用完整枚举交叉检查这个小规模问题。
-
-另外两个初始化案例：
-
-```bash
-mm init runs/forecast --case forecast
-mm run runs/forecast
-
-mm init runs/custom --case custom
-mm run runs/custom
-```
-
-案例数据均为教学构造，数据来源和生成方法保存在各自工作区。仓库中的 [`examples/`](examples/) 已保存执行结果和论文，便于安装前浏览。实际练习建议在 `runs/` 下新建工作区，保留仓库示例原貌。
 
 ## 在 Codex 中使用
 
@@ -212,7 +179,7 @@ Python wheel 只安装运行器和内置资源。使用 Codex skills 时，还�
 }
 ```
 
-这段内容展示小问结构，完整配置还需要 `schema_version`、`kind`、`title`、`data_file`、`data_origin`、`units` 和 `assumptions` 等字段。可从初始化案例修改，也可参考 [`schemas/problem.schema.json`](schemas/problem.schema.json)。影响计算的歧义写入 `unresolved`；这些事项没有明确前，分析阶段会停止并给出提示。
+这段内容展示小问结构，完整配置还需要 `schema_version`、`kind`、`title`、`data_file`、`data_origin`、`units` 和 `assumptions` 等字段。可从初始化配置修改，也可参考 [`schemas/problem.schema.json`](schemas/problem.schema.json)。影响计算的歧义写入 `unresolved`；这些事项没有明确前，分析阶段会停止并给出提示。
 
 ### 2. 选择计算接口
 
@@ -230,7 +197,7 @@ Python wheel 只安装运行器和内置资源。使用 Codex skills 时，还�
 mm init runs/my-contest --case custom
 ```
 
-该命令复制的是一个可以运行的二次损失教学案例。处理真实赛题时，需要替换题目配置、原始数据、模型代码和正文内容。完整步骤见 [真实赛题上手说明](docs/QUICKSTART.md)。
+该命令使用内置模板建立工作区。处理自己的赛题时，请按题目更新配置、原始数据、模型代码和正文内容。完整步骤见 [真实赛题上手说明](docs/QUICKSTART.md)。
 
 ### 3. 分阶段运行并检查
 
@@ -251,28 +218,23 @@ mm run runs/my-contest
 
 ### 正文如何引用结果
 
-论文内容写在 `paper/content.json` 中。需要展示计算结果时，使用字段标记，构建时再从本次运行结果取值。例如，整数配置案例的正文可以写成：
+论文内容写在 `paper/content.json` 中。需要展示计算结果时，使用字段标记，构建时再从本次运行结果取值。正文中的计算字段可以按以下格式引用：
 
 ```json
 {
-  "abstract": "建立整数生产配置模型，本次求解得到总利润 {{metric:objective|.2f}}。",
-  "keywords": ["整数规划", "资源配置"],
+  "abstract": "本次模型的目标值为 {{metric:objective|.2f}}。",
+  "keywords": ["数学建模"],
   "sections": [
     {
-      "heading": "生产方案",
-      "text": "使用混合整数线性规划求解{{cite:scipy_milp}}。总利润为 {{metric:objective|.2f}}，基线为 {{metric:baseline_objective|.2f}}。",
+      "heading": "结果分析",
+      "text": "计算得到的目标值为 {{metric:objective|.2f}}。",
       "question_ids": ["Q1"]
-    },
-    {
-      "heading": "容量情景分析",
-      "text": "对资源容量同步变化的情景分别重新求解，目标值及状态列于情景表。",
-      "question_ids": ["Q2"]
     }
   ]
 }
 ```
 
-其中 `scipy_milp` 需要在 `problem.sources` 中有对应记录；内置整数配置案例已提供该来源。
+`question_ids` 应与题目中的小问编号一致，引用的字段应由当前模型实际计算产生。引用外部资料时，使用 `{{cite:source_id}}`，并在 `problem.sources` 中保存相应来源。
 
 | 标记 | 读取位置 | 用途 |
 | --- | --- | --- |
@@ -305,9 +267,7 @@ mm log-ai runs/my-contest \
 
 论文模板位于 [`paper.tex.j2`](src/math_modeling/assets/templates/paper.tex.j2)，可调整章节、页眉、字体、页边距和参考来源布局。`contest.max_pages` 用于检查生成页数；赛事名称、年份和语言字段用于记录上下文，具体模板及语言需要相应修改。
 
-内置图表同时保存 PNG 和矢量 PDF，并保留底层数据路径。下面是预测案例的留出测试结果：
-
-![预测案例的留出测试结果](examples/forecast/figures/holdout.png)
+内置图表同时保存 PNG 和矢量 PDF，并保留底层数据路径。
 
 论文输出为供队员审阅的草稿。提交前还需要检查原题覆盖、数学推导、来源支持及 PDF 排版。详细说明见 [论文绑定与排版](docs/PAPER.md)。
 
@@ -368,7 +328,7 @@ def validate(problem, data, result):
     """独立检查结果，返回带布尔通过状态的检查列表。"""
 ```
 
-上面的代码用于说明函数签名。完整可运行示例见 [`custom/adapter.py`](src/math_modeling/assets/cases/custom/adapter.py)。
+上面的代码用于说明函数签名。四个函数的字段和返回值要求见 [自定义模型文档](docs/ADAPTERS.md)。
 
 `solve` 的结果结构示例：
 
@@ -408,9 +368,9 @@ def validate(problem, data, result):
 | 命令 | 作用 |
 | --- | --- |
 | `mm doctor` | 检查依赖、版本和 PDF 工具 |
-| `mm init PATH --case allocation` | 创建整数配置案例工作区 |
-| `mm init PATH --case forecast` | 创建日频预测案例工作区 |
-| `mm init PATH --case custom` | 创建可修改的自定义模型案例 |
+| `mm init PATH --case allocation` | 初始化整数配置工作区 |
+| `mm init PATH --case forecast` | 初始化日频预测工作区 |
+| `mm init PATH --case custom` | 初始化自定义模型工作区 |
 | `mm run PATH` | 执行到论文和审阅阶段，复用仍有效的产物 |
 | `mm run PATH --until STAGE` | 执行到指定阶段 |
 | `mm run PATH --force` | 完整重算 |
@@ -424,7 +384,7 @@ def validate(problem, data, result):
 
 命令退出状态：`run` 成功返回 `0`；`status` 全部阶段有效时返回 `0`，其他进度状态返回 `1`；`audit` 通过返回 `0`，检查失败返回 `2`。输入或构建错误返回非零状态，具体原因写在终端和相应产物中。
 
-已有结构化案例还可以通过工作区的复现脚本重建：
+已配置的计算任务还可以通过工作区的复现脚本重建：
 
 ```bash
 python runs/my-contest/reproduce.py
@@ -432,36 +392,16 @@ python runs/my-contest/reproduce.py
 
 该脚本需要使用已安装本项目依赖的 Python 环境。
 
-## 案例和验证结果
+## 测试
 
-| 案例 | 内容 | 已记录结果 | 论文 |
-| --- | --- | --- | --- |
-| `allocation` | 三产品整数配置、贪心基线、线性松弛上界、容量情景和枚举核验 | 最优数量 `(9, 7, 0)`，利润 `605` | [PDF](examples/allocation/paper/paper.pdf) |
-| `forecast` | 训练期扩展窗口选模，最后 14 日测试，再预测未来 7 日 | 测试 RMSE `2.108277`，周朴素基线 RMSE `4.320833` | [PDF](examples/forecast/paper/paper.pdf) |
-| `custom` | 自定义适配器，最小化等权平方损失 | 中心值 `5`，损失 `20` | [PDF](examples/custom/paper/paper.pdf) |
-| `forward-validation` | 独立会话使用新输入完成全流程，并另行枚举核验 | 最优数量 `(6, 7, 0)`，利润 `122` | [PDF](examples/forward-validation/paper/paper.pdf) |
-
-预测数据使用固定种子生成，程序保存在 [`generate_data.py`](src/math_modeling/assets/cases/forecast/generate_data.py)。其余案例也在配置中明确声明数据来源。上述数值用于验证代码与流程，不代表实际企业结论或比赛成绩。
-
-运行结构检查和测试：
+运行结构检查和自动测试：
 
 ```bash
 python scripts/check_skills.py
 python scripts/evaluate.py
 ```
 
-当前验证记录为 **38 项测试全部通过**。测试包括：
-
-- 已知整数最优解、利润比例变化、资源扩张和不可行问题。
-- 精确线性预测、独立拟合核对及最终测试值不影响训练选模。
-- 非有限数据、缺失单位、重复产品、日期重复或缺口。
-- 断点恢复、缓存、输入变化失效、正文局部重建和产物篡改。
-- 论文数值绑定、未知引用、遗漏小问和 PDF 构建。
-- 空参考来源情况下的真实 XeLaTeX 编译。
-
-测试使用临时工作区，结果写入 [`evals/latest.json`](evals/latest.json)。XeLaTeX 未安装时，对应的可选测试会跳过，报告会记录跳过数量。
-
-[`evals/skill-prompts.jsonl`](evals/skill-prompts.jsonl) 还提供 16 条自然语言触发与行为评测任务。目前没有统计整套提示词的 LLM 路由准确率。已完成的新题前向验证记录见 [`FORWARD_REPORT.md`](examples/forward-validation/FORWARD_REPORT.md)，完整执行与视觉检查记录见 [VALIDATION.md](VALIDATION.md)。
+测试使用临时工作区，执行结果写入 `evals/latest.json`。XeLaTeX 未安装时，对应的可选测试会跳过，报告会记录跳过数量。
 
 ## 项目结构
 
@@ -470,17 +410,14 @@ math-modeling-skills/
 ├── .agents/skills/           八个 skills 及其参考资料
 ├── src/math_modeling/        工作流、模型、图表和论文运行器
 │   └── assets/
-│       ├── cases/           可初始化的原始案例
 │       └── templates/       中文 LaTeX 模板
-├── examples/                已执行工作区、结果、代码快照和论文
 ├── schemas/                 问题、结果和正文的 JSON Schema
 ├── scripts/                 源码运行、安装 skills、评测和打包工具
 ├── tests/                   数学结果与工作流测试
-├── evals/                   测试结果及宿主行为评测任务
+├── evals/                   测试记录与行为检查配置
 ├── docs/                    接口、架构、排版和来源说明
 ├── pyproject.toml           Python 包和命令入口配置
 ├── requirements-lock.txt    验证环境的依赖版本
-├── VALIDATION.md            验证记录
 └── LICENSE                  MIT 许可证
 ```
 
