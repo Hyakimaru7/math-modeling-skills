@@ -1,0 +1,25 @@
+{
+  "keywords": [
+    "整数生产配置",
+    "容量约束",
+    "枚举核验",
+    "情景分析"
+  ],
+  "abstract": "针对训练工坊的生产配置任务，建立满足最低与最高产量要求的整数线性规划模型。原始机时容量为 {{param:resources.machine|.0f}}，材料容量为 {{param:resources.material|.0f}}。实际求解利润为 {{metric:objective|.2f}}，可行贪心基线利润为 {{metric:baseline_objective|.2f}}，相对变化为 {{metric:improvement_percent|.2f}}%。通过约束复算和整数域枚举核验主方案，并比较资源同步变化的情景。结论限于题目声明的人工构造数据。",
+  "sections": [
+    {
+      "heading": "主方案与约束解释",
+      "question_ids": [
+        "Q1"
+      ],
+      "text": "依据附件的利润、资源消耗和产量边界建立模型。原题要求产品按整件生产，且训练品A对应的最低生产数量必须保留。使用 SciPy 的混合整数规划求解接口{{cite:scipy_milp}}，得到目标值 {{metric:objective|.2f}}；线性松弛上界为 {{metric:relaxation_upper_bound|.2f}}。可行贪心基线目标值为 {{metric:baseline_objective|.2f}}，相对变化为 {{metric:improvement_percent|.2f}}%。各产品的具体配置数量见结果表。求解状态与数值核验共同作为最优性表述依据。"
+    },
+    {
+      "heading": "容量情景与局限",
+      "question_ids": [
+        "Q2"
+      ],
+      "text": "对两类资源容量实施同步比例扰动，逐个重新求解并保留状态，具体数值见情景表。由于整数产量约束，增加容量的效益可能存在台阶。本次同步扰动不等价于每类资源的独立边际价值分析；实际业务解释还需要核验利润和资源消耗的稳定性。"
+    }
+  ]
+}

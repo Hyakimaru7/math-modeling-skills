@@ -1,0 +1,23 @@
+[
+  {
+    "path": "figures/holdout.png",
+    "vector_path": "figures/holdout.pdf",
+    "caption": "最终留出测试集上的实际值、所选模型与周朴素基线预测。",
+    "data": [
+      "tables/holdout.csv"
+    ],
+    "result_id": "8a7cedf5652865f1",
+    "uncertainty": "none; point estimates"
+  },
+  {
+    "path": "figures/forecast.png",
+    "vector_path": "figures/forecast.pdf",
+    "caption": "使用全部已观测数据重新拟合后的未来点预测；竖线右侧为外推区间。",
+    "data": [
+      "data/processed.json",
+      "tables/forecast.csv"
+    ],
+    "result_id": "8a7cedf5652865f1",
+    "uncertainty": "none; point estimates"
+  }
+]

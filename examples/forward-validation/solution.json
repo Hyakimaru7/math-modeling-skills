@@ -1,0 +1,62 @@
+{
+  "status": "optimal",
+  "metrics": {
+    "objective": 122.0,
+    "baseline_objective": 103.0,
+    "relaxation_upper_bound": 123.66666666666666,
+    "improvement_percent": 18.446601941747574
+  },
+  "solver": {
+    "status": "optimal",
+    "x": [
+      6.0,
+      7.0,
+      0.0
+    ],
+    "objective": 122.0,
+    "gap": 0.0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  },
+  "tables": {
+    "allocation": [
+      {
+        "product": "训练品A",
+        "quantity": 6.0,
+        "profit": 66.0
+      },
+      {
+        "product": "训练品B",
+        "quantity": 7.0,
+        "profit": 56.0
+      },
+      {
+        "product": "训练品C",
+        "quantity": 0.0,
+        "profit": 0.0
+      }
+    ],
+    "sensitivity": [
+      {
+        "capacity_factor": 0.9,
+        "status": "optimal",
+        "objective": 107.0
+      },
+      {
+        "capacity_factor": 1.0,
+        "status": "optimal",
+        "objective": 122.0
+      },
+      {
+        "capacity_factor": 1.1,
+        "status": "optimal",
+        "objective": 130.0
+      }
+    ]
+  },
+  "coverage": {
+    "Q1": "computed",
+    "Q2": "computed"
+  },
+  "result_id": "83ec2d499ded44ef",
+  "input_signature": "83ec2d499ded44eff9591fa97798ac8d552761cf09216aac40ecf43a36bb506e"
+}

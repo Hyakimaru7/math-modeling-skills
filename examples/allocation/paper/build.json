@@ -1,0 +1,9 @@
+{
+  "engine": "xelatex",
+  "pages": 4,
+  "draft": true,
+  "result_id": "47db080aee5d5c7f",
+  "source_verification_pending": [
+    "scipy_milp"
+  ]
+}

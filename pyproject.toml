@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "math-modeling-skills"
+version = "0.1.0"
+description = "Evidence-linked mathematical modeling, executable experiments and competition papers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "matplotlib>=3.8,<4", "Jinja2>=3.1,<4", "reportlab>=4.0,<5", "pypdf>=5,<7"]
+
+[project.scripts]
+mm = "math_modeling.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Hyakimaru7/math-modeling-skills"
+Repository = "https://github.com/Hyakimaru7/math-modeling-skills"
+Issues = "https://github.com/Hyakimaru7/math-modeling-skills/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+math_modeling = ["assets/**/*"]

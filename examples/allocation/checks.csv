@@ -1,0 +1,8 @@
+name,passed,detail
+bounds,True,"""逐项检查变量上下界"""
+integrality,True,"""逐项检查整数域"""
+capacity:labor,True,"{""used"": 25.0, ""capacity"": 25.0}"
+capacity:material,True,"{""used"": 23.0, ""capacity"": 23.0}"
+objective_recomputed,True,605.0
+relaxation_bound,True,605.0
+enumeration_reference,True,"{""states"": 990, ""best"": 605.0}"

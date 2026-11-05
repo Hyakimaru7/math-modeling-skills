@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "options": {
+    "seed": 20261105,
+    "time_limit": 30
+  },
+  "contest": {
+    "profile": "training",
+    "year": 2026,
+    "language": "zh",
+    "max_pages": 25
+  },
+  "unresolved": [],
+  "kind": "allocation",
+  "title": "训练工坊的整数生产配置与资源情景分析",
+  "data_file": "raw/products.csv",
+  "data_origin": "用户提供的生产配置训练任务及 products.csv，原题明确数据为人工构造；不代表实际企业测量。",
+  "units": {
+    "quantity": "件",
+    "profit": "利润单位/件",
+    "machine": "机时",
+    "material": "材料单位"
+  },
+  "resources": {
+    "machine": 19,
+    "material": 21
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "task": "allocation",
+      "text": "按附件最低与最高产量约束给出利润最大的整数生产方案，并与可行基线比较。",
+      "depends_on": []
+    },
+    {
+      "id": "Q2",
+      "task": "sensitivity",
+      "text": "比较资源容量同步收缩或扩张时的目标变化。",
+      "depends_on": [
+        "Q1"
+      ]
+    }
+  ],
+  "assumptions": [
+    "决策期内各产品的单位利润与单位资源消耗固定。",
+    "产品按整件生产，最低与最高产量均按原始附件严格约束。",
+    "情景分析只同步改变资源容量，其余参数保持不变。"
+  ],
+  "sources": [
+    {
+      "id": "scipy_milp",
+      "title": "SciPy 官方文档：混合整数线性规划 milp",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html",
+      "verification": "opened_by_agent",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "input_files": [
+    "independent_verify.py"
+  ]
+}

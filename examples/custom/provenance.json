@@ -1,0 +1,25 @@
+{
+  "result_id": "8e64817628fbc7cd",
+  "input_signature": "8e64817628fbc7cd2526878db923a891a880dd6a35408f7812ef6785ebfddfa4",
+  "inputs": {
+    "problem.json": "1519429ef2c0c9aa019198e95c65a5c2cc8300b4f684ab9e4fc7703c2772a11a",
+    "raw/observations.csv": "33f0b66bafc2460c0a3a835d0eb6742e355046beaeca02b512d478dbda1196bb",
+    "statement.md": "ea8235ff39f63b05ba5e15776505d5975addcd8007aa8a3f155d8105ca386234",
+    "adapter.py": "cf19ab9cb5c721cd6cc87923036557a642d67e8f25c8f9598d0c5630705dc998"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "math-modeling-skills": "0.1.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "Jinja2": "3.1.6",
+    "reportlab": "4.4.9",
+    "pypdf": "6.18.0"
+  },
+  "generated_at": "2026-11-05T08:41:26+00:00",
+  "seed": 20261105,
+  "data_origin": "人工构造的独立适配器示例数据，仅用于验证模型扩展接口。",
+  "adapter": "custom",
+  "algorithm_code": "math_modeling/models.py or workspace/adapter.py"
+}

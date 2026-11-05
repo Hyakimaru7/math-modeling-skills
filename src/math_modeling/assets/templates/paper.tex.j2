@@ -1,0 +1,109 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,graphicx,float,fancyhdr,xcolor,needspace}
+\usepackage{xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}
+\definecolor{accent}{HTML}{155574}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学建模训练论文}
+\fancyhead[R]{\small 待人工审阅}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{15pt}
+\setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{3em}
+\title{\bfseries ((( title|tex )))}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.4em}
+\begin{center}\small\color{accent}训练草稿：计算已核验，建模解释、引用及赛事格式仍需队员审阅\end{center}
+\begin{abstract}
+((( abstract|tex )))
+\end{abstract}
+\noindent\textbf{关键词：}((( keywords|join('；')|tex )))
+
+\section{问题分析与数据来源}
+((( problem.data_origin|tex )))
+\begin{description}
+((* for q in problem.questions *))
+\item[((( q.id|tex )))] ((( q.text|tex )))
+((* endfor *))
+\end{description}
+
+\section{模型假设与符号}
+\begin{enumerate}
+((* for item in problem.assumptions *))
+\item ((( item|tex )))
+((* endfor *))
+\end{enumerate}
+\begin{longtable}{p{.16\textwidth}p{.46\textwidth}p{.20\textwidth}}
+\toprule 符号 & 含义 & 单位 \\ \midrule
+((* for v in model.variables *))
+((( v.symbol|tex ))) & ((( v.meaning|tex ))) & ((( v.unit|tex ))) \\
+((* endfor *))
+\bottomrule
+\end{longtable}
+
+\section{模型建立与求解方法}
+((( model.selection|default('采用题目工作区内记录的模型。')|tex )))
+((* for equation in model.equations *))
+\begin{equation}
+((( equation )))
+\end{equation}
+((* endfor *))
+\noindent\textbf{基线方案：}((( model.baseline|default('见实验记录。')|tex )))
+
+((* for s in sections *))
+\section{((( s.heading|tex )))}
+((( s.text|tex )))
+((* endfor *))
+
+\section{计算结果与图表}
+所有数值均读取同一次实验记录；表中的不可用项保留其原始状态。
+((* for table in tables *))
+\Needspace{7\baselineskip}
+\subsection*{((( table.name|tex )))}
+{\small
+\begin{longtable}{((* for col in table.columns *))l((* endfor *))}
+\toprule
+((* for col in table.columns *))((( col|tex )))((* if not loop.last *)) & ((* else *)) \\ ((* endif *))((* endfor *))
+\midrule\endhead
+((* for row in table.rows *))
+((* for cell in row *))((( cell|tex )))((* if not loop.last *)) & ((* else *)) \\ ((* endif *))((* endfor *))
+((* endfor *))
+\bottomrule
+\end{longtable}}
+((* endfor *))
+((* for f in figures *))
+\begin{figure}[H]
+\centering
+\includegraphics[width=.91\textwidth]{../((( f.path )))}
+\caption{((( f.caption|tex )))}
+\end{figure}
+((* endfor *))
+
+\section{检验、局限与改进方向}
+本次自动核验覆盖了已编码的数值条件。自动核验通过不等价于题意解释已经充分，队员仍需对照原题审阅假设与结论。
+\begin{itemize}
+((* for item in model.limitations *))
+\item ((( item|tex )))
+((* endfor *))
+\end{itemize}
+
+\section*{参考来源}
+((* if sources *))
+\begin{description}
+((* for s in sources *))
+\item[((( s.id|tex )))] ((( s.title|tex ))). \url{((( s.url )))}. 核验状态：((( s.verification|default('unverified')|tex ))).
+((* endfor *))
+\end{description}
+((* else *))
+本例未使用外部经验事实；模型由所列数学关系直接推导。实际赛题使用外部资料时，应在此补充并核验来源。
+((* endif *))
+\section*{复现与 AI 使用说明}
+数据来源、程序版本和输入摘要见工作区中的 provenance.json；运行命令见复现说明。
+本案例使用已声明的训练数据，结论仅用于演示建模过程。
+实际 AI 工具使用、人工修改及核验记录保存在 ai\_usage.jsonl 中，由队员据实补充后按赛事要求整理。
+\end{document}

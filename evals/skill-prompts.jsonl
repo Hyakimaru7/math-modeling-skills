@@ -1,0 +1,16 @@
+{"id": "full", "prompt": "请读取赛题与附件，完成模型、代码、验证和中文论文。", "expected_skills": ["mm-contest"], "acceptance": "preserve inputs; solve actual questions; run validation; build current PDF", "evaluated": false}
+{"id": "resume", "prompt": "这个工作区计算做到一半，请接着完成论文。", "expected_skills": ["mm-contest"], "acceptance": "inspect status; preserve user inputs; reuse only current artifacts", "evaluated": false}
+{"id": "analyze", "prompt": "分析这道赛题的各小问依赖和需要哪些数据。", "expected_skills": ["mm-analyze"], "acceptance": "given vs assumed; unique ids; no invented data", "evaluated": false}
+{"id": "data", "prompt": "预测附件缺失两天，检查并解释可用的处理方法。", "expected_skills": ["mm-data"], "acceptance": "report dates; preserve original; no silent zero fill", "evaluated": false}
+{"id": "model", "prompt": "这个排班题适合什么模型？给出变量与约束。", "expected_skills": ["mm-model"], "acceptance": "reflect scheduling constraints; do not force allocation adapter", "evaluated": false}
+{"id": "code", "prompt": "把已经确定的库存模型写成自定义适配器并运行。", "expected_skills": ["mm-code"], "acceptance": "four functions; budgets; correct multi-period constraints", "evaluated": false}
+{"id": "validate", "prompt": "求解器说最优，请独立检查目标与约束。", "expected_skills": ["mm-validate"], "acceptance": "recompute from input; status and feasible checks", "evaluated": false}
+{"id": "forecast", "prompt": "比较趋势与周期模型，最终测试集不要参与调参。", "expected_skills": ["mm-model", "mm-code", "mm-validate"], "acceptance": "time-ordered folds before holdout", "evaluated": false}
+{"id": "paper", "prompt": "根据已验证实验结果完成摘要与结果分析。", "expected_skills": ["mm-paper"], "acceptance": "metric bindings; no fabricated experiments", "evaluated": false}
+{"id": "review", "prompt": "代码改了，请检查论文数字是否已经更新。", "expected_skills": ["mm-review"], "acceptance": "status/audit; identify stale content", "evaluated": false}
+{"id": "infeasible", "prompt": "需求超过所有资源上限，请给出分析与可交付材料。", "expected_skills": ["mm-contest"], "acceptance": "retain infeasible status; no fake feasible result", "evaluated": false}
+{"id": "citation", "prompt": "论文有一条无法找到的文献，请核验。", "expected_skills": ["mm-review"], "acceptance": "mark unverified; do not invent DOI", "evaluated": false}
+{"id": "custom", "prompt": "这个传播模型需要微分方程，请完成代码与论文。", "expected_skills": ["mm-contest"], "acceptance": "custom adapter; initial conditions; numerical verification", "evaluated": false}
+{"id": "hint", "prompt": "只提示我如何定义变量，暂时不要给出完整答案。", "expected_skills": ["mm-model"], "acceptance": "respect requested scope", "evaluated": false}
+{"id": "negative", "prompt": "今天的天气怎样？", "expected_skills": [], "acceptance": "no math modeling skills", "evaluated": false}
+{"id": "concept", "prompt": "简单解释什么是导数。", "expected_skills": [], "acceptance": "no full contest workflow", "evaluated": false}

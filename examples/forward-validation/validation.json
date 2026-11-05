@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "bounds",
+      "passed": true,
+      "detail": "逐项检查变量上下界"
+    },
+    {
+      "name": "integrality",
+      "passed": true,
+      "detail": "逐项检查整数域"
+    },
+    {
+      "name": "capacity:machine",
+      "passed": true,
+      "detail": {
+        "used": 19.0,
+        "capacity": 19.0
+      }
+    },
+    {
+      "name": "capacity:material",
+      "passed": true,
+      "detail": {
+        "used": 20.0,
+        "capacity": 21.0
+      }
+    },
+    {
+      "name": "objective_recomputed",
+      "passed": true,
+      "detail": 122.0
+    },
+    {
+      "name": "relaxation_bound",
+      "passed": true,
+      "detail": 123.66666666666666
+    },
+    {
+      "name": "enumeration_reference",
+      "passed": true,
+      "detail": {
+        "states": 480,
+        "best": 122.0
+      }
+    }
+  ],
+  "scope": "自动核验覆盖已编码条件；题意解释与模型假设仍需队员审阅。",
+  "result_id": "83ec2d499ded44ef"
+}

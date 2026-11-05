@@ -1,0 +1,25 @@
+{
+  "keywords": [
+    "整数规划",
+    "资源配置",
+    "敏感性分析",
+    "可复现计算"
+  ],
+  "abstract": "针对有限工时与材料下的生产配置问题，建立带产量上下界的整数线性规划模型，并设置可行贪心方案作为比较基线。本次求解得到总利润 {{metric:objective|.2f}}，基线总利润为 {{metric:baseline_objective|.2f}}，相对变化为 {{metric:improvement_percent|.2f}}%。通过逐项约束复算、线性松弛上界和小规模枚举交叉检验验证主方案，并比较资源同步变化的情景。结论限于已声明的教学数据与线性假设。",
+  "sections": [
+    {
+      "heading": "主方案与基线比较",
+      "question_ids": [
+        "Q1"
+      ],
+      "text": "以产品数量为决策变量，使用混合整数线性规划求解器完成优化{{cite:scipy_milp}}。主方案总利润为 {{metric:objective|.2f}}，贪心基线为 {{metric:baseline_objective|.2f}}，相对变化为 {{metric:improvement_percent|.2f}}%。线性松弛上界为 {{metric:relaxation_upper_bound|.2f}}。具体产品数量列于配置表；最优性表述以求解状态和交叉核验记录为依据。"
+    },
+    {
+      "heading": "容量情景与决策解释",
+      "question_ids": [
+        "Q2"
+      ],
+      "text": "分别对资源容量实施同步收缩与扩张并重新求解，具体目标值和状态列于情景表。该实验反映给定方向上的局部响应，整数生产数量可能导致目标值随容量呈现阶梯变化。资源类别的边际价值需要分别扰动后进一步分析。"
+    }
+  ]
+}

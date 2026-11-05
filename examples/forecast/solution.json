@@ -1,0 +1,207 @@
+{
+  "status": "computed",
+  "selected_model": "trend_weekly",
+  "selected_model_name": "趋势与周周期模型",
+  "metrics": {
+    "holdout_rmse": 2.1082770718913064,
+    "holdout_mae": 1.7370669805532657,
+    "baseline_rmse": 4.320833466768701,
+    "rmse_improvement_percent": 51.2067037967107,
+    "forecast_total": 886.6365046339893,
+    "observations": 112,
+    "holdout_size": 14
+  },
+  "test_coefficients": [
+    90.2774804750996,
+    0.31921697253108344,
+    13.188128304045955,
+    0.17932765639638368
+  ],
+  "final_coefficients": [
+    90.4204999654739,
+    0.3151465899076673,
+    13.25259903948586,
+    0.21928472765338863
+  ],
+  "split_index": 98,
+  "cv_folds": [
+    {
+      "train_start": 0,
+      "train_end_exclusive": 62,
+      "valid_start": 62,
+      "valid_end_exclusive": 74
+    },
+    {
+      "train_start": 0,
+      "train_end_exclusive": 74,
+      "valid_start": 74,
+      "valid_end_exclusive": 86
+    },
+    {
+      "train_start": 0,
+      "train_end_exclusive": 86,
+      "valid_start": 86,
+      "valid_end_exclusive": 98
+    }
+  ],
+  "cv_scores": {
+    "seasonal_naive": 5.384090815590849,
+    "trend": 10.103199865498077,
+    "trend_weekly": 2.8877716845303216
+  },
+  "cv_fold_scores": {
+    "seasonal_naive": [
+      6.917204788692965,
+      5.377748445614154,
+      3.8573192124654256
+    ],
+    "trend": [
+      10.770473212071051,
+      9.767790265174437,
+      9.771336119248742
+    ],
+    "trend_weekly": [
+      4.331678144127696,
+      2.611015979678199,
+      1.7206209297850705
+    ]
+  },
+  "tables": {
+    "holdout": [
+      {
+        "date": "2026-04-09",
+        "actual": 121.049647,
+        "predicted": 121.7400714395421,
+        "baseline": 121.468423
+      },
+      {
+        "date": "2026-04-10",
+        "actual": 133.69191,
+        "predicted": 132.3026636235621,
+        "baseline": 130.703334
+      },
+      {
+        "date": "2026-04-11",
+        "actual": 133.678056,
+        "predicted": 135.01674796367195,
+        "baseline": 131.568131
+      },
+      {
+        "date": "2026-04-12",
+        "actual": 125.699363,
+        "predicted": 128.0789404856935,
+        "baseline": 124.389933
+      },
+      {
+        "date": "2026-04-13",
+        "actual": 118.598727,
+        "predicted": 116.95392861718153,
+        "baseline": 112.430111
+      },
+      {
+        "date": "2026-04-14",
+        "actual": 109.879509,
+        "predicted": 110.25945009516616,
+        "baseline": 109.166381
+      },
+      {
+        "date": "2026-04-15",
+        "actual": 112.997833,
+        "predicted": 113.2769606803559,
+        "baseline": 108.07403
+      },
+      {
+        "date": "2026-04-16",
+        "actual": 122.567898,
+        "predicted": 123.97459024725978,
+        "baseline": 121.468423
+      },
+      {
+        "date": "2026-04-17",
+        "actual": 136.854236,
+        "predicted": 134.5371824312796,
+        "baseline": 130.703334
+      },
+      {
+        "date": "2026-04-18",
+        "actual": 137.517252,
+        "predicted": 137.25126677138957,
+        "baseline": 131.568131
+      },
+      {
+        "date": "2026-04-19",
+        "actual": 126.444982,
+        "predicted": 130.31345929341117,
+        "baseline": 124.389933
+      },
+      {
+        "date": "2026-04-20",
+        "actual": 121.089175,
+        "predicted": 119.18844742489921,
+        "baseline": 112.430111
+      },
+      {
+        "date": "2026-04-21",
+        "actual": 108.127208,
+        "predicted": 112.49396890288372,
+        "baseline": 109.166381
+      },
+      {
+        "date": "2026-04-22",
+        "actual": 113.420046,
+        "predicted": 115.51147948807343,
+        "baseline": 108.07403
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-04-23",
+        "predicted": 125.93620276278597
+      },
+      {
+        "date": "2026-04-24",
+        "predicted": 136.53008557003108
+      },
+      {
+        "date": "2026-04-25",
+        "predicted": 139.21874448509698
+      },
+      {
+        "date": "2026-04-26",
+        "predicted": 132.21487631631132
+      },
+      {
+        "date": "2026-04-27",
+        "predicted": 121.0298484576633
+      },
+      {
+        "date": "2026-04-28",
+        "predicted": 114.3235268297224
+      },
+      {
+        "date": "2026-04-29",
+        "predicted": 117.38322021237823
+      }
+    ],
+    "model_comparison": [
+      {
+        "model": "seasonal_naive",
+        "cv_rmse": 5.384090815590849
+      },
+      {
+        "model": "trend",
+        "cv_rmse": 10.103199865498077
+      },
+      {
+        "model": "trend_weekly",
+        "cv_rmse": 2.8877716845303216
+      }
+    ]
+  },
+  "coverage": {
+    "Q1": "computed",
+    "Q2": "computed"
+  },
+  "result_id": "8a7cedf5652865f1",
+  "input_signature": "8a7cedf5652865f1a8b71c50b003bcc57eb5be8f02cfa50de87f3108b6866d05"
+}

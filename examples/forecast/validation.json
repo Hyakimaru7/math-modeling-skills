@@ -1,0 +1,97 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "chronological_split",
+      "passed": true,
+      "detail": {
+        "split": 98,
+        "n": 112
+      }
+    },
+    {
+      "name": "no_leakage_fold_0",
+      "passed": true,
+      "detail": {
+        "train_start": 0,
+        "train_end_exclusive": 62,
+        "valid_start": 62,
+        "valid_end_exclusive": 74
+      }
+    },
+    {
+      "name": "no_leakage_fold_1",
+      "passed": true,
+      "detail": {
+        "train_start": 0,
+        "train_end_exclusive": 74,
+        "valid_start": 74,
+        "valid_end_exclusive": 86
+      }
+    },
+    {
+      "name": "no_leakage_fold_2",
+      "passed": true,
+      "detail": {
+        "train_start": 0,
+        "train_end_exclusive": 86,
+        "valid_start": 86,
+        "valid_end_exclusive": 98
+      }
+    },
+    {
+      "name": "selection_from_training_cv",
+      "passed": true,
+      "detail": {
+        "seasonal_naive": 5.384090815590849,
+        "trend": 10.103199865498077,
+        "trend_weekly": 2.8877716845303216
+      }
+    },
+    {
+      "name": "holdout_dates",
+      "passed": true,
+      "detail": "测试集日期与原始数据一致"
+    },
+    {
+      "name": "holdout_actuals",
+      "passed": true,
+      "detail": "测试观测与原始数据一致"
+    },
+    {
+      "name": "rmse_recomputed",
+      "passed": true,
+      "detail": 2.1082770718913064
+    },
+    {
+      "name": "independent_fit",
+      "passed": true,
+      "detail": "正规方程与最小二乘求解交叉核对"
+    },
+    {
+      "name": "horizon",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "future_dates",
+      "passed": true,
+      "detail": [
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-27",
+        "2026-04-28",
+        "2026-04-29"
+      ]
+    },
+    {
+      "name": "finite_predictions",
+      "passed": true,
+      "detail": "有限数值检查"
+    }
+  ],
+  "scope": "自动核验覆盖已编码条件；题意解释与模型假设仍需队员审阅。",
+  "result_id": "8a7cedf5652865f1"
+}

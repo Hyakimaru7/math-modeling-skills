@@ -1,0 +1,17 @@
+{
+  "installed_wheel_import": true,
+  "audit": {
+    "passed": true,
+    "draft": true,
+    "result_id": "8e64817628fbc7cd",
+    "errors": [],
+    "warnings": [
+      "AI 使用记录为空；使用 AI 时请据实补充，空记录不能解释为未使用 AI"
+    ],
+    "notes": [
+      "自动核验、数值绑定和产物一致性检查完成。",
+      "模型假设、题意覆盖、来源支持与赛事格式需要队员审阅；本工具不自动提交论文。"
+    ]
+  },
+  "dependencies": "preinstalled verified runtime; no source checkout on import path"
+}

@@ -1,0 +1,39 @@
+{
+  "family": "mixed-integer linear programming",
+  "variables": [
+    {
+      "symbol": "x_1",
+      "meaning": "训练品A",
+      "domain": "nonnegative integer",
+      "unit": "件"
+    },
+    {
+      "symbol": "x_2",
+      "meaning": "训练品B",
+      "domain": "nonnegative integer",
+      "unit": "件"
+    },
+    {
+      "symbol": "x_3",
+      "meaning": "训练品C",
+      "domain": "nonnegative integer",
+      "unit": "件"
+    }
+  ],
+  "equations": [
+    "\\max\\; z=\\sum_{j=1}^{n}p_jx_j",
+    "\\sum_{j=1}^{n}a_{ij}x_j\\leq b_i\\quad(i=1,\\ldots,m)",
+    "l_j\\leq x_j\\leq u_j,\\quad x_j\\in\\mathbb{Z}_{\\geq0}"
+  ],
+  "baseline": "从最低产量出发，按单位归一化资源利润贪心增量配置；若最低产量不可行则报告不可行。",
+  "selection": "决策变量是整数，目标和资源约束均线性；使用 MILP 并与线性松弛上界比较。",
+  "assumptions": [
+    "决策期内各产品的单位利润与单位资源消耗固定。",
+    "产品按整件生产，最低与最高产量均按原始附件严格约束。",
+    "情景分析只同步改变资源容量，其余参数保持不变。"
+  ],
+  "limitations": [
+    "利润与资源消耗视为常数，未包含价格反馈。",
+    "情景扰动属于局部分析，不代表随机鲁棒最优。"
+  ]
+}

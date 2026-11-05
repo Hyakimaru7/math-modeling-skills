@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-05",
+  "tests": 38,
+  "passed": 38,
+  "skipped": 0,
+  "skill_structure_passed": 8,
+  "wheel_install_passed": true,
+  "pdf_visual_review": "15 pages rendered with PyMuPDF and visually inspected",
+  "cases": [
+    {
+      "case": "allocation",
+      "pages": 4,
+      "metrics": {
+        "objective": 605.0,
+        "baseline_objective": 515.0,
+        "relaxation_upper_bound": 605.0,
+        "improvement_percent": 17.475728155339805
+      },
+      "audit_passed": true
+    },
+    {
+      "case": "forecast",
+      "pages": 5,
+      "metrics": {
+        "holdout_rmse": 2.1082770718913064,
+        "holdout_mae": 1.7370669805532657,
+        "baseline_rmse": 4.320833466768701,
+        "rmse_improvement_percent": 51.2067037967107,
+        "forecast_total": 886.6365046339893,
+        "observations": 112,
+        "holdout_size": 14
+      },
+      "audit_passed": true
+    },
+    {
+      "case": "custom",
+      "pages": 2,
+      "metrics": {
+        "center": 5.0,
+        "loss": 20.0
+      },
+      "audit_passed": true
+    },
+    {
+      "case": "forward-validation",
+      "pages": 4,
+      "metrics": {
+        "objective": 122.0,
+        "baseline_objective": 103.0,
+        "relaxation_upper_bound": 123.66666666666666,
+        "improvement_percent": 18.446601941747574
+      },
+      "audit_passed": true
+    }
+  ],
+  "native_host_forward_cases": 1,
+  "native_prompt_catalog_evaluated": false
+}

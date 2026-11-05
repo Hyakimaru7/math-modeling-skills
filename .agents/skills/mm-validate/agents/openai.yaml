@@ -1,0 +1,6 @@
+interface:
+  display_name: "结果核验与稳健性分析"
+  short_description: "面向数学建模比赛，处理结果核验与稳健性分析，交付可追溯、可复现的模型与论文产物。"
+  default_prompt: "请使用 $mm-validate 处理当前赛题及已有工作，执行适用步骤并交付可核验的结果。"
+policy:
+  allow_implicit_invocation: true

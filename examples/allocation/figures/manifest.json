@@ -1,0 +1,22 @@
+[
+  {
+    "path": "figures/allocation.png",
+    "vector_path": "figures/allocation.pdf",
+    "caption": "各产品的整数配置数量；产品顺序与配置表一致。",
+    "data": [
+      "tables/allocation.csv"
+    ],
+    "result_id": "47db080aee5d5c7f",
+    "uncertainty": "none; point estimates"
+  },
+  {
+    "path": "figures/sensitivity.png",
+    "vector_path": "figures/sensitivity.pdf",
+    "caption": "全部资源容量同步变化时的目标值；不可行情景不绘制数值。",
+    "data": [
+      "tables/sensitivity.csv"
+    ],
+    "result_id": "47db080aee5d5c7f",
+    "uncertainty": "none; point estimates"
+  }
+]

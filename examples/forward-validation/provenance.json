@@ -1,0 +1,25 @@
+{
+  "result_id": "83ec2d499ded44ef",
+  "input_signature": "83ec2d499ded44eff9591fa97798ac8d552761cf09216aac40ecf43a36bb506e",
+  "inputs": {
+    "problem.json": "cf95fe42b5295ddf57d7b8faa3b1316b95d6e5d78ef8a0a7a5e8e7e4828f4eb4",
+    "raw/products.csv": "0d33efcdb8e6986ac97bb42a9b9543c8d0370a073e59b665b06e51cd2ee086d2",
+    "independent_verify.py": "f914f2179067a4a732c430c8c7fcb5dd4e006d1af247b7cb8bf6d9c050adfad7",
+    "statement.md": "03d4758795f4a1b3fe8281cf4eac1603a282d7e91ff3edf61b09c113961341a5"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "math-modeling-skills": "0.1.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "Jinja2": "3.1.6",
+    "reportlab": "4.4.9",
+    "pypdf": "6.18.0"
+  },
+  "generated_at": "2026-11-05T08:41:28+00:00",
+  "seed": 20261105,
+  "data_origin": "用户提供的生产配置训练任务及 products.csv，原题明确数据为人工构造；不代表实际企业测量。",
+  "adapter": "allocation",
+  "algorithm_code": "math_modeling/models.py or workspace/adapter.py"
+}

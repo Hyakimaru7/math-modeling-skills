@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MathModeling solution v1",
+  "type": "object",
+  "required": [
+    "status",
+    "metrics",
+    "tables",
+    "coverage"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "optimal",
+        "computed",
+        "limit_reached",
+        "infeasible",
+        "unbounded",
+        "solver_error"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    },
+    "tables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "result_id": {
+      "type": "string"
+    },
+    "input_signature": {
+      "type": "string"
+    }
+  }
+}

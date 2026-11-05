@@ -1,0 +1,10 @@
+{
+  "missing_policy": "reject",
+  "source": "用户提供的生产配置训练任务及 products.csv，原题明确数据为人工构造；不代表实际企业测量。",
+  "units": {
+    "quantity": "件",
+    "profit": "利润单位/件",
+    "machine": "机时",
+    "material": "材料单位"
+  }
+}

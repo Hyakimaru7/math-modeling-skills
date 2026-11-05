@@ -1,0 +1,25 @@
+{
+  "result_id": "8a7cedf5652865f1",
+  "input_signature": "8a7cedf5652865f1a8b71c50b003bcc57eb5be8f02cfa50de87f3108b6866d05",
+  "inputs": {
+    "problem.json": "1e00a1c4984542f1a42c834fd70c3a312a5fba26440c7df3a21b78baa890d7f7",
+    "raw/demand.csv": "ee3f4ca72686f2995b6f7b2bd1cd70ef29120a20c89037df1ebf85277f32a58e",
+    "generate_data.py": "539bfc2537a09f61c02c9bce1642040357dcfedbc3530f3d4d85d2c48c0deb0b",
+    "statement.md": "c3ea7c06b5a5968a388b63e6c00c206eee108d480aae41cd642b01282ac3eaaa"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "math-modeling-skills": "0.1.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "Jinja2": "3.1.6",
+    "reportlab": "4.4.9",
+    "pypdf": "6.18.0"
+  },
+  "generated_at": "2026-11-05T08:41:23+00:00",
+  "seed": 20261105,
+  "data_origin": "本案例数据由固定随机种子的趋势、周周期和随机扰动构造，仅用于教学与软件评测；生成程序保存在 generate_data.py。",
+  "adapter": "forecast",
+  "algorithm_code": "math_modeling/models.py or workspace/adapter.py"
+}

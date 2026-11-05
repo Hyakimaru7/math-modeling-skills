@@ -1,0 +1,24 @@
+{
+  "result_id": "47db080aee5d5c7f",
+  "input_signature": "47db080aee5d5c7fbc1ab48650c01f6dd49f1b0e948e28187fe9076225e369fb",
+  "inputs": {
+    "problem.json": "147e572e7fa7f37a5d038f01b4f4bcbc68b12a11150ef50aa51dbc4339ea1d37",
+    "raw/products.csv": "ef9397ba5c2d8b3c3e56bc7bc561c37f15f7776147b2ea79848858b51631cbb2",
+    "statement.md": "6a2ff9576e30c4bff79d43bd7cd94c1a44deb2c9bbe12dd2045a54b238ce54bb"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "math-modeling-skills": "0.1.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "Jinja2": "3.1.6",
+    "reportlab": "4.4.9",
+    "pypdf": "6.18.0"
+  },
+  "generated_at": "2026-11-05T08:41:20+00:00",
+  "seed": 20261105,
+  "data_origin": "本案例使用人工构造的教学数据，用于验证建模、代码与论文的一体化流程；不是企业实测数据，也不是历年赛题附件。",
+  "adapter": "allocation",
+  "algorithm_code": "math_modeling/models.py or workspace/adapter.py"
+}

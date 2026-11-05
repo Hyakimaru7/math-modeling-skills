@@ -1,0 +1,42 @@
+[
+  {
+    "id": "C001",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "center",
+    "format": ".2f",
+    "value": 5.0,
+    "rendered": "5.00",
+    "result_id": "8e64817628fbc7cd"
+  },
+  {
+    "id": "C002",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "loss",
+    "format": ".2f",
+    "value": 20.0,
+    "rendered": "20.00",
+    "result_id": "8e64817628fbc7cd"
+  },
+  {
+    "id": "C003",
+    "section": "模型求解与验证",
+    "kind": "metric",
+    "path": "center",
+    "format": ".2f",
+    "value": 5.0,
+    "rendered": "5.00",
+    "result_id": "8e64817628fbc7cd"
+  },
+  {
+    "id": "C004",
+    "section": "模型求解与验证",
+    "kind": "metric",
+    "path": "loss",
+    "format": ".2f",
+    "value": 20.0,
+    "rendered": "20.00",
+    "result_id": "8e64817628fbc7cd"
+  }
+]

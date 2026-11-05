@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "options": {
+    "seed": 20261105,
+    "time_limit": 30
+  },
+  "contest": {
+    "profile": "training",
+    "year": 2026,
+    "language": "zh",
+    "max_pages": 25
+  },
+  "unresolved": [],
+  "kind": "forecast",
+  "title": "基于时间顺序验证的日需求预测与基线比较",
+  "data_file": "raw/demand.csv",
+  "data_origin": "本案例数据由固定随机种子的趋势、周周期和随机扰动构造，仅用于教学与软件评测；生成程序保存在 generate_data.py。",
+  "units": {
+    "value": "需求单位/日"
+  },
+  "horizon": 7,
+  "holdout": 14,
+  "questions": [
+    {
+      "id": "Q1",
+      "task": "comparison",
+      "text": "比较周朴素、线性趋势、趋势加周周期模型，并用训练期验证选择方法。",
+      "depends_on": []
+    },
+    {
+      "id": "Q2",
+      "task": "forecast",
+      "text": "在留出测试集评价预测误差，再用全部已观测数据拟合并预测未来需求。",
+      "depends_on": [
+        "Q1"
+      ]
+    }
+  ],
+  "assumptions": [
+    "日需求具有可由候选模型近似的趋势或周周期。",
+    "观测日期连续且单位一致，预测时只能使用预测起点之前已知的信息。",
+    "当前候选模型未纳入节假日、价格与结构突变等外部因素。"
+  ],
+  "sources": [
+    {
+      "id": "numpy_lstsq",
+      "title": "NumPy 官方文档：最小二乘求解 numpy.linalg.lstsq",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html",
+      "verification": "opened_by_agent",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "input_files": [
+    "generate_data.py"
+  ]
+}

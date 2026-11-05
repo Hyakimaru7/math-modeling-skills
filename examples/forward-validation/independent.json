@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "factor": 0.9,
+      "enumerated_optimum": 107.0,
+      "optimal_plans": [
+        [
+          4,
+          6,
+          1
+        ]
+      ],
+      "solver_objective": 107.0,
+      "passed": true
+    },
+    {
+      "factor": 1.0,
+      "enumerated_optimum": 122.0,
+      "optimal_plans": [
+        [
+          6,
+          7,
+          0
+        ]
+      ],
+      "solver_objective": 122.0,
+      "passed": true
+    },
+    {
+      "factor": 1.1,
+      "enumerated_optimum": 130.0,
+      "optimal_plans": [
+        [
+          6,
+          8,
+          0
+        ]
+      ],
+      "solver_objective": 130.0,
+      "passed": true
+    }
+  ]
+}

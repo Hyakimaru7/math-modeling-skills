@@ -1,0 +1,4 @@
+product,profit,min_units,max_units,machine,material
+训练品A,11,1,8,2,1
+训练品B,8,0,9,1,2
+训练品C,15,0,5,3,2

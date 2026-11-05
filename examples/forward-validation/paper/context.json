@@ -1,0 +1,261 @@
+{
+  "title": "训练工坊的整数生产配置与资源情景分析",
+  "abstract": "针对训练工坊的生产配置任务，建立满足最低与最高产量要求的整数线性规划模型。原始机时容量为 19，材料容量为 21。实际求解利润为 122.00，可行贪心基线利润为 103.00，相对变化为 18.45%。通过约束复算和整数域枚举核验主方案，并比较资源同步变化的情景。结论限于题目声明的人工构造数据。",
+  "keywords": [
+    "整数生产配置",
+    "容量约束",
+    "枚举核验",
+    "情景分析"
+  ],
+  "sections": [
+    {
+      "heading": "主方案与约束解释",
+      "text": "依据附件的利润、资源消耗和产量边界建立模型。原题要求产品按整件生产，且训练品A对应的最低生产数量必须保留。使用 SciPy 的混合整数规划求解接口[scipy_milp]，得到目标值 122.00；线性松弛上界为 123.67。可行贪心基线目标值为 103.00，相对变化为 18.45%。各产品的具体配置数量见结果表。求解状态与数值核验共同作为最优性表述依据。",
+      "question_ids": [
+        "Q1"
+      ]
+    },
+    {
+      "heading": "容量情景与局限",
+      "text": "对两类资源容量实施同步比例扰动，逐个重新求解并保留状态，具体数值见情景表。由于整数产量约束，增加容量的效益可能存在台阶。本次同步扰动不等价于每类资源的独立边际价值分析；实际业务解释还需要核验利润和资源消耗的稳定性。",
+      "question_ids": [
+        "Q2"
+      ]
+    }
+  ],
+  "problem": {
+    "schema_version": 1,
+    "options": {
+      "seed": 20261105,
+      "time_limit": 30
+    },
+    "contest": {
+      "profile": "training",
+      "year": 2026,
+      "language": "zh",
+      "max_pages": 25
+    },
+    "unresolved": [],
+    "kind": "allocation",
+    "title": "训练工坊的整数生产配置与资源情景分析",
+    "data_file": "raw/products.csv",
+    "data_origin": "用户提供的生产配置训练任务及 products.csv，原题明确数据为人工构造；不代表实际企业测量。",
+    "units": {
+      "quantity": "件",
+      "profit": "利润单位/件",
+      "machine": "机时",
+      "material": "材料单位"
+    },
+    "resources": {
+      "machine": 19,
+      "material": 21
+    },
+    "questions": [
+      {
+        "id": "Q1",
+        "task": "allocation",
+        "text": "按附件最低与最高产量约束给出利润最大的整数生产方案，并与可行基线比较。",
+        "depends_on": []
+      },
+      {
+        "id": "Q2",
+        "task": "sensitivity",
+        "text": "比较资源容量同步收缩或扩张时的目标变化。",
+        "depends_on": [
+          "Q1"
+        ]
+      }
+    ],
+    "assumptions": [
+      "决策期内各产品的单位利润与单位资源消耗固定。",
+      "产品按整件生产，最低与最高产量均按原始附件严格约束。",
+      "情景分析只同步改变资源容量，其余参数保持不变。"
+    ],
+    "sources": [
+      {
+        "id": "scipy_milp",
+        "title": "SciPy 官方文档：混合整数线性规划 milp",
+        "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html",
+        "verification": "opened_by_agent",
+        "accessed": "2026-11-05"
+      }
+    ],
+    "input_files": [
+      "independent_verify.py"
+    ]
+  },
+  "model": {
+    "family": "mixed-integer linear programming",
+    "variables": [
+      {
+        "symbol": "x_1",
+        "meaning": "训练品A",
+        "domain": "nonnegative integer",
+        "unit": "件"
+      },
+      {
+        "symbol": "x_2",
+        "meaning": "训练品B",
+        "domain": "nonnegative integer",
+        "unit": "件"
+      },
+      {
+        "symbol": "x_3",
+        "meaning": "训练品C",
+        "domain": "nonnegative integer",
+        "unit": "件"
+      }
+    ],
+    "equations": [
+      "\\max\\; z=\\sum_{j=1}^{n}p_jx_j",
+      "\\sum_{j=1}^{n}a_{ij}x_j\\leq b_i\\quad(i=1,\\ldots,m)",
+      "l_j\\leq x_j\\leq u_j,\\quad x_j\\in\\mathbb{Z}_{\\geq0}"
+    ],
+    "baseline": "从最低产量出发，按单位归一化资源利润贪心增量配置；若最低产量不可行则报告不可行。",
+    "selection": "决策变量是整数，目标和资源约束均线性；使用 MILP 并与线性松弛上界比较。",
+    "assumptions": [
+      "决策期内各产品的单位利润与单位资源消耗固定。",
+      "产品按整件生产，最低与最高产量均按原始附件严格约束。",
+      "情景分析只同步改变资源容量，其余参数保持不变。"
+    ],
+    "limitations": [
+      "利润与资源消耗视为常数，未包含价格反馈。",
+      "情景扰动属于局部分析，不代表随机鲁棒最优。"
+    ]
+  },
+  "tables": [
+    {
+      "name": "生产配置方案",
+      "columns": [
+        "产品",
+        "数量",
+        "利润"
+      ],
+      "rows": [
+        [
+          "训练品A",
+          "6",
+          "66"
+        ],
+        [
+          "训练品B",
+          "7",
+          "56"
+        ],
+        [
+          "训练品C",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "name": "资源容量情景",
+      "columns": [
+        "容量倍率",
+        "求解状态",
+        "目标值"
+      ],
+      "rows": [
+        [
+          "0.9",
+          "最优",
+          "107"
+        ],
+        [
+          "1",
+          "最优",
+          "122"
+        ],
+        [
+          "1.1",
+          "最优",
+          "130"
+        ]
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "path": "figures/allocation.png",
+      "vector_path": "figures/allocation.pdf",
+      "caption": "各产品的整数配置数量；产品顺序与配置表一致。",
+      "data": [
+        "tables/allocation.csv"
+      ],
+      "result_id": "83ec2d499ded44ef",
+      "uncertainty": "none; point estimates"
+    },
+    {
+      "path": "figures/sensitivity.png",
+      "vector_path": "figures/sensitivity.pdf",
+      "caption": "全部资源容量同步变化时的目标值；不可行情景不绘制数值。",
+      "data": [
+        "tables/sensitivity.csv"
+      ],
+      "result_id": "83ec2d499ded44ef",
+      "uncertainty": "none; point estimates"
+    }
+  ],
+  "sources": [
+    {
+      "id": "scipy_milp",
+      "title": "SciPy 官方文档：混合整数线性规划 milp",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.milp.html",
+      "verification": "opened_by_agent",
+      "accessed": "2026-11-05"
+    }
+  ],
+  "result_id": "83ec2d499ded44ef",
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "bounds",
+        "passed": true,
+        "detail": "逐项检查变量上下界"
+      },
+      {
+        "name": "integrality",
+        "passed": true,
+        "detail": "逐项检查整数域"
+      },
+      {
+        "name": "capacity:machine",
+        "passed": true,
+        "detail": {
+          "used": 19.0,
+          "capacity": 19.0
+        }
+      },
+      {
+        "name": "capacity:material",
+        "passed": true,
+        "detail": {
+          "used": 20.0,
+          "capacity": 21.0
+        }
+      },
+      {
+        "name": "objective_recomputed",
+        "passed": true,
+        "detail": 122.0
+      },
+      {
+        "name": "relaxation_bound",
+        "passed": true,
+        "detail": 123.66666666666666
+      },
+      {
+        "name": "enumeration_reference",
+        "passed": true,
+        "detail": {
+          "states": 480,
+          "best": 122.0
+        }
+      }
+    ],
+    "scope": "自动核验覆盖已编码条件；题意解释与模型假设仍需队员审阅。",
+    "result_id": "83ec2d499ded44ef"
+  }
+}

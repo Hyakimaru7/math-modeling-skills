@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "stationarity",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "loss_recomputed",
+      "passed": true,
+      "detail": 20.0
+    },
+    {
+      "name": "local_perturbation",
+      "passed": true,
+      "detail": "双侧扰动"
+    }
+  ],
+  "result_id": "8e64817628fbc7cd"
+}

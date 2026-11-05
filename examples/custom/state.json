@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "stages": {
+    "analyze": {
+      "status": "complete",
+      "signature": "22c30b3c6cd9018d7cd349d55fb73ad2b8d4cdb7a91e6dfe781e36003c6f142b",
+      "started_at": "2026-11-05T08:41:26+00:00",
+      "completed_at": "2026-11-05T08:41:26+00:00",
+      "outputs": {
+        "analysis.json": "73603d5a941b3ddba2e34e691f82b8eea1cf4401b1b6396a7156fbda36871468"
+      }
+    },
+    "data": {
+      "status": "complete",
+      "signature": "5828f27f5f0c62f9d02d4b0d48cf0edd02161408b828694b8f34e494af43d67b",
+      "started_at": "2026-11-05T08:41:26+00:00",
+      "completed_at": "2026-11-05T08:41:26+00:00",
+      "outputs": {
+        "data/processed.json": "d13273b0ea6d0a291a38e069550a0825ca833974d8bd9a60676869bc88cdb851",
+        "data/quality.json": "f28655cea4bc4b554aa9a0c428ba710313742185e3a0d6c6ba9affea461ee951"
+      }
+    },
+    "model": {
+      "status": "complete",
+      "signature": "b63cb87ace1c06fe804b1bdadc8e37135feeb6d2b9c89fcd635fe65671b822f5",
+      "started_at": "2026-11-05T08:41:26+00:00",
+      "completed_at": "2026-11-05T08:41:26+00:00",
+      "outputs": {
+        "model.json": "04e48ac6ceb4a269193d06989cade7b577b0337a479a8b814d81c48724e045c0"
+      }
+    },
+    "solve": {
+      "status": "complete",
+      "signature": "d6497f6ca37889485e6832bc0a2032a0eabfa4dd00a80010280ba08a4c8a0077",
+      "started_at": "2026-11-05T08:41:26+00:00",
+      "completed_at": "2026-11-05T08:41:26+00:00",
+      "outputs": {
+        "solution.json": "a32f370872c63463f13bd0389556a87a86edcc39c5fd0ccd2c626923340aeafc",
+        "tables/estimate.csv": "38db877ac3856ad3ead41dbde801314e2de4972dd922eaa6bc53f12e375edc71",
+        "figures/manifest.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "provenance.json": "d9c29ab3378da820536bba3f0923a1dc78e0153fdcf56f6cc352dc49f05f55c3",
+        "reproduce.py": "2eb806b61d307a789241cf75000598f26ac4822ed7d012fc4fc422e2d5397cce",
+        "code_snapshot/__init__.py": "0fb4a71b6d73e275fd294a3fd76eb2d4adf6a3d4d20d2315691111bf16f48d2f",
+        "code_snapshot/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+        "code_snapshot/cli.py": "a6e058886e2279e136e695f53c1e797dbe60836b4349e4651c428319ff16be04",
+        "code_snapshot/core.py": "482afe28e3be5bd71ebbc78ab6fccd2581bd353ad617a69e07389c9922049cc6",
+        "code_snapshot/figures.py": "7f5db3ca0384bce27b06a9dde61988370973045f07cea3ffbb619cafcb6d6c12",
+        "code_snapshot/models.py": "309aa2f355b779ae0063964d0da6079b301066266786afc1e5db2921b71a7d82",
+        "code_snapshot/paper.py": "36de7d946b9ba81ddd5841fa8246b6f8fe6070dad12e0f3ace207fb757bef0ab",
+        "code_snapshot/pipeline.py": "2c364f9c93fd8336e79e2303dd65fcabea9b600b8ecc2b9b809d99b013f7689b",
+        "code_snapshot/adapter.py": "cf19ab9cb5c721cd6cc87923036557a642d67e8f25c8f9598d0c5630705dc998"
+      }
+    },
+    "validate": {
+      "status": "complete",
+      "signature": "89b6d302ed1b1a334cedc25a1437ddca00a2d342fc692448d6cac0a5a4f7221b",
+      "started_at": "2026-11-05T08:41:26+00:00",
+      "completed_at": "2026-11-05T08:41:26+00:00",
+      "outputs": {
+        "validation.json": "c157f0c419e3447567c063eaadfd32b3830d5884eac7825a97fe647815cadbb9",
+        "checks.csv": "6b94117d6c5d0ad575853df856d1e337af082fd7789c58abc6800780276d6f2c"
+      }
+    },
+    "paper": {
+      "status": "complete",
+      "signature": "af2cc2b79a7d6958bc921aeb71124d74e3a87e3dd8a66a77b45085194e56a290",
+      "started_at": "2026-11-05T08:41:26+00:00",
+      "completed_at": "2026-11-05T08:41:28+00:00",
+      "outputs": {
+        "paper/manuscript.md": "0d46555111cc0db3d8e3ed32355f0ed177a874a1ca886f9714580f593a87fc5b",
+        "paper/claims.json": "7be9d6ae6fc8dddaa499be8d49c8f9bb161959fc0e7fc0be6aaceee484c8cf65",
+        "paper/context.json": "991e77bf969d0446ca816a58039fbd68b86e44e057c1b531439ce088469ba082",
+        "paper/paper.tex": "6835b3b5498877dff0db26b3b233c6dfc2d603e804bd83a3098fa0a276ffb1e5",
+        "paper/paper.pdf": "c604e3bf7f50236b9f1e29dc140a5c4bf44dcba586e15129d37bc6be09942aff",
+        "paper/build.json": "e7647cdd949b449451053d8d414fee2582d3a35fa65115857f08bbda597d9c8d"
+      }
+    },
+    "review": {
+      "status": "complete",
+      "signature": "53c7270238bd2324d39ea1d90d603884ea0d0d2d87224ba312bb98430a2cfea4",
+      "started_at": "2026-11-05T08:41:28+00:00",
+      "completed_at": "2026-11-05T08:41:28+00:00",
+      "outputs": {
+        "review.json": "2199957464f1a4181c447c979614aa27f0e082b18f3378f0aeeec42f236350a8",
+        "review.md": "e718ec6c8a868a0a52c2a50758387149e3bac954d0fe2552c5d528f81b413e34"
+      }
+    }
+  },
+  "created_at": "2026-11-05T08:18:41+00:00",
+  "engine": "xelatex"
+}

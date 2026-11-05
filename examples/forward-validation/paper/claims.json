@@ -1,0 +1,92 @@
+[
+  {
+    "id": "C001",
+    "section": "摘要",
+    "kind": "param",
+    "path": "resources.machine",
+    "format": ".0f",
+    "value": 19,
+    "rendered": "19",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C002",
+    "section": "摘要",
+    "kind": "param",
+    "path": "resources.material",
+    "format": ".0f",
+    "value": 21,
+    "rendered": "21",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C003",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "objective",
+    "format": ".2f",
+    "value": 122.0,
+    "rendered": "122.00",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C004",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "baseline_objective",
+    "format": ".2f",
+    "value": 103.0,
+    "rendered": "103.00",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C005",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "improvement_percent",
+    "format": ".2f",
+    "value": 18.446601941747574,
+    "rendered": "18.45",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C006",
+    "section": "主方案与约束解释",
+    "kind": "metric",
+    "path": "objective",
+    "format": ".2f",
+    "value": 122.0,
+    "rendered": "122.00",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C007",
+    "section": "主方案与约束解释",
+    "kind": "metric",
+    "path": "relaxation_upper_bound",
+    "format": ".2f",
+    "value": 123.66666666666666,
+    "rendered": "123.67",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C008",
+    "section": "主方案与约束解释",
+    "kind": "metric",
+    "path": "baseline_objective",
+    "format": ".2f",
+    "value": 103.0,
+    "rendered": "103.00",
+    "result_id": "83ec2d499ded44ef"
+  },
+  {
+    "id": "C009",
+    "section": "主方案与约束解释",
+    "kind": "metric",
+    "path": "improvement_percent",
+    "format": ".2f",
+    "value": 18.446601941747574,
+    "rendered": "18.45",
+    "result_id": "83ec2d499ded44ef"
+  }
+]

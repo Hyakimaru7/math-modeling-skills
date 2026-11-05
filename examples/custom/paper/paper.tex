@@ -1,0 +1,97 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,graphicx,float,fancyhdr,xcolor,needspace}
+\usepackage{xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}
+\definecolor{accent}{HTML}{155574}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学建模训练论文}
+\fancyhead[R]{\small 待人工审阅}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{15pt}
+\setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{3em}
+\title{\bfseries 自定义适配器示例：一维二次损失最小化}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.4em}
+\begin{center}\small\color{accent}训练草稿：计算已核验，建模解释、引用及赛事格式仍需队员审阅\end{center}
+\begin{abstract}
+针对等权观测的中心估计问题，构建平方损失最小化模型，得到中心估计 5.00，平方损失为 20.00。通过梯度条件及邻域扰动检查验证结果。本例用于演示自定义适配器与统一论文构建链路。
+\end{abstract}
+\noindent\textbf{关键词：}自定义适配器；最小二乘；独立核验
+
+\section{问题分析与数据来源}
+人工构造的独立适配器示例数据，仅用于验证模型扩展接口。
+\begin{description}
+
+\item[Q1] 估计最小化平方损失的中心值，并独立核验一阶最优条件。
+
+\end{description}
+
+\section{模型假设与符号}
+\begin{enumerate}
+
+\item 各观测具有相同权重。
+
+\end{enumerate}
+\begin{longtable}{p{.16\textwidth}p{.46\textwidth}p{.20\textwidth}}
+\toprule 符号 & 含义 & 单位 \\ \midrule
+
+c & 中心值 & 单位 \\
+
+\bottomrule
+\end{longtable}
+
+\section{模型建立与求解方法}
+等权平方损失是严格凸函数，样本均值给出唯一极小值。
+
+\begin{equation}
+\min_c L(c)=\sum_i(y_i-c)^2
+\end{equation}
+
+\noindent\textbf{基线方案：}任意固定中心。
+
+
+\section{模型求解与验证}
+平方损失的一阶条件表明，最优中心为样本均值。本次结果为 5.00，对应损失为 20.00。核验代码重新计算梯度并检查两侧扰动的损失，避免只依赖求解函数的返回状态。
+
+
+\section{计算结果与图表}
+所有数值均读取同一次实验记录；表中的不可用项保留其原始状态。
+
+\Needspace{7\baselineskip}
+\subsection*{中心估计结果}
+{\small
+\begin{longtable}{ll}
+\toprule
+中心值 & 观测数 \\ 
+\midrule\endhead
+
+5 & 4 \\ 
+
+\bottomrule
+\end{longtable}}
+
+
+
+\section{检验、局限与改进方向}
+本次自动核验覆盖了已编码的数值条件。自动核验通过不等价于题意解释已经充分，队员仍需对照原题审阅假设与结论。
+\begin{itemize}
+
+\item 平方损失对离群值敏感。
+
+\end{itemize}
+
+\section*{参考来源}
+
+本例未使用外部经验事实；模型由所列数学关系直接推导。实际赛题使用外部资料时，应在此补充并核验来源。
+
+\section*{复现与 AI 使用说明}
+数据来源、程序版本和输入摘要见工作区中的 provenance.json；运行命令见复现说明。
+本案例使用已声明的训练数据，结论仅用于演示建模过程。
+实际 AI 工具使用、人工修改及核验记录保存在 ai\_usage.jsonl 中，由队员据实补充后按赛事要求整理。
+\end{document}

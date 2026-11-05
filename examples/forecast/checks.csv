@@ -1,0 +1,13 @@
+name,passed,detail
+chronological_split,True,"{""split"": 98, ""n"": 112}"
+no_leakage_fold_0,True,"{""train_start"": 0, ""train_end_exclusive"": 62, ""valid_start"": 62, ""valid_end_exclusive"": 74}"
+no_leakage_fold_1,True,"{""train_start"": 0, ""train_end_exclusive"": 74, ""valid_start"": 74, ""valid_end_exclusive"": 86}"
+no_leakage_fold_2,True,"{""train_start"": 0, ""train_end_exclusive"": 86, ""valid_start"": 86, ""valid_end_exclusive"": 98}"
+selection_from_training_cv,True,"{""seasonal_naive"": 5.384090815590849, ""trend"": 10.103199865498077, ""trend_weekly"": 2.8877716845303216}"
+holdout_dates,True,"""测试集日期与原始数据一致"""
+holdout_actuals,True,"""测试观测与原始数据一致"""
+rmse_recomputed,True,2.1082770718913064
+independent_fit,True,"""正规方程与最小二乘求解交叉核对"""
+horizon,True,7
+future_dates,True,"[""2026-04-23"", ""2026-04-24"", ""2026-04-25"", ""2026-04-26"", ""2026-04-27"", ""2026-04-28"", ""2026-04-29""]"
+finite_predictions,True,"""有限数值检查"""

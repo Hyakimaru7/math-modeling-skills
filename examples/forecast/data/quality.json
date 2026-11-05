@@ -1,0 +1,7 @@
+{
+  "missing_policy": "reject",
+  "source": "本案例数据由固定随机种子的趋势、周周期和随机扰动构造，仅用于教学与软件评测；生成程序保存在 generate_data.py。",
+  "units": {
+    "value": "需求单位/日"
+  }
+}

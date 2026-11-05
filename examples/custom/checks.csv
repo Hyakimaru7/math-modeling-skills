@@ -1,0 +1,4 @@
+name,passed,detail
+stationarity,True,0.0
+loss_recomputed,True,20.0
+local_perturbation,True,"""双侧扰动"""

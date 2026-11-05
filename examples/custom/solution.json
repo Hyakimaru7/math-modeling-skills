@@ -1,0 +1,20 @@
+{
+  "status": "optimal",
+  "metrics": {
+    "center": 5.0,
+    "loss": 20.0
+  },
+  "tables": {
+    "estimate": [
+      {
+        "center": 5.0,
+        "count": 4
+      }
+    ]
+  },
+  "coverage": {
+    "Q1": "computed"
+  },
+  "result_id": "8e64817628fbc7cd",
+  "input_signature": "8e64817628fbc7cd2526878db923a891a880dd6a35408f7812ef6785ebfddfa4"
+}

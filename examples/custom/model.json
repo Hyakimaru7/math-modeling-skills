@@ -1,0 +1,22 @@
+{
+  "family": "quadratic loss",
+  "variables": [
+    {
+      "symbol": "c",
+      "meaning": "中心值",
+      "unit": "单位",
+      "domain": "real"
+    }
+  ],
+  "equations": [
+    "\\min_c L(c)=\\sum_i(y_i-c)^2"
+  ],
+  "assumptions": [
+    "各观测具有相同权重。"
+  ],
+  "selection": "等权平方损失是严格凸函数，样本均值给出唯一极小值。",
+  "baseline": "任意固定中心。",
+  "limitations": [
+    "平方损失对离群值敏感。"
+  ]
+}

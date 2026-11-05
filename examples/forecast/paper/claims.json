@@ -1,0 +1,132 @@
+[
+  {
+    "id": "C001",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "observations",
+    "format": ".0f",
+    "value": 112,
+    "rendered": "112",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C002",
+    "section": "摘要",
+    "kind": "value",
+    "path": "selected_model_name",
+    "format": null,
+    "value": "趋势与周周期模型",
+    "rendered": "趋势与周周期模型",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C003",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "holdout_rmse",
+    "format": ".3f",
+    "value": 2.1082770718913064,
+    "rendered": "2.108",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C004",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "baseline_rmse",
+    "format": ".3f",
+    "value": 4.320833466768701,
+    "rendered": "4.321",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C005",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "rmse_improvement_percent",
+    "format": ".2f",
+    "value": 51.2067037967107,
+    "rendered": "51.21",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C006",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "forecast_total",
+    "format": ".2f",
+    "value": 886.6365046339893,
+    "rendered": "886.64",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C007",
+    "section": "候选模型与训练期选择",
+    "kind": "value",
+    "path": "selected_model_name",
+    "format": null,
+    "value": "趋势与周周期模型",
+    "rendered": "趋势与周周期模型",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C008",
+    "section": "独立测试与未来预测",
+    "kind": "metric",
+    "path": "holdout_size",
+    "format": ".0f",
+    "value": 14,
+    "rendered": "14",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C009",
+    "section": "独立测试与未来预测",
+    "kind": "metric",
+    "path": "holdout_rmse",
+    "format": ".3f",
+    "value": 2.1082770718913064,
+    "rendered": "2.108",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C010",
+    "section": "独立测试与未来预测",
+    "kind": "metric",
+    "path": "holdout_mae",
+    "format": ".3f",
+    "value": 1.7370669805532657,
+    "rendered": "1.737",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C011",
+    "section": "独立测试与未来预测",
+    "kind": "metric",
+    "path": "baseline_rmse",
+    "format": ".3f",
+    "value": 4.320833466768701,
+    "rendered": "4.321",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C012",
+    "section": "独立测试与未来预测",
+    "kind": "metric",
+    "path": "rmse_improvement_percent",
+    "format": ".2f",
+    "value": 51.2067037967107,
+    "rendered": "51.21",
+    "result_id": "8a7cedf5652865f1"
+  },
+  {
+    "id": "C013",
+    "section": "独立测试与未来预测",
+    "kind": "metric",
+    "path": "forecast_total",
+    "format": ".2f",
+    "value": 886.6365046339893,
+    "rendered": "886.64",
+    "result_id": "8a7cedf5652865f1"
+  }
+]

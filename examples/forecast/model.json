@@ -1,0 +1,33 @@
+{
+  "family": "time-ordered model comparison",
+  "variables": [
+    {
+      "symbol": "t",
+      "meaning": "自起始日期起的日序号",
+      "domain": "integer",
+      "unit": "日"
+    },
+    {
+      "symbol": "y_t",
+      "meaning": "日观测值",
+      "domain": "real",
+      "unit": "需求单位/日"
+    }
+  ],
+  "equations": [
+    "\\widehat y_t=\\beta_0+\\beta_1t",
+    "\\widehat y_t=\\beta_0+\\beta_1t+\\beta_2\\sin(2\\pi t/7)+\\beta_3\\cos(2\\pi t/7)",
+    "\\operatorname{RMSE}=\\sqrt{N^{-1}\\sum_t(y_t-\\widehat y_t)^2}"
+  ],
+  "baseline": "同星期朴素预测（仅使用预测起点之前最后一周的观测）。",
+  "selection": "仅在最终测试集之前的数据上进行扩展窗口验证，按平均 RMSE 选择模型；测试集只评价一次。",
+  "assumptions": [
+    "日需求具有可由候选模型近似的趋势或周周期。",
+    "观测日期连续且单位一致，预测时只能使用预测起点之前已知的信息。",
+    "当前候选模型未纳入节假日、价格与结构突变等外部因素。"
+  ],
+  "limitations": [
+    "候选模型仅含周周期和线性趋势，结构突变会影响外推。",
+    "结果是点预测；本案例未估计经校准的预测区间。"
+  ]
+}

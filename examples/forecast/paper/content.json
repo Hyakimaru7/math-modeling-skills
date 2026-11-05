@@ -1,0 +1,25 @@
+{
+  "keywords": [
+    "时间顺序验证",
+    "需求预测",
+    "周周期",
+    "基线比较"
+  ],
+  "abstract": "针对日需求预测问题，使用 {{metric:observations|.0f}} 个连续日观测，设置最终留出测试集，并仅在测试集之前的数据上开展扩展窗口验证。训练期比较后选定 {{value:selected_model_name}} 模型。最终测试均方根误差为 {{metric:holdout_rmse|.3f}}，周朴素基线为 {{metric:baseline_rmse|.3f}}，相对变化为 {{metric:rmse_improvement_percent|.2f}}%。之后用全部观测重新拟合，未来预测期合计需求为 {{metric:forecast_total|.2f}}。结果为点预测，其适用范围限于教学数据及已声明假设。",
+  "sections": [
+    {
+      "heading": "候选模型与训练期选择",
+      "question_ids": [
+        "Q1"
+      ],
+      "text": "候选方法包含同星期朴素模型、线性趋势模型及趋势加周周期模型。参数通过最小二乘估计{{cite:numpy_lstsq}}。所有验证窗口均位于最终测试期之前；根据训练期平均验证误差选定 {{value:selected_model_name}}，比较结果列于模型表。最终测试集不参与候选方法选择。"
+    },
+    {
+      "heading": "独立测试与未来预测",
+      "question_ids": [
+        "Q2"
+      ],
+      "text": "最终留出样本数为 {{metric:holdout_size|.0f}}，所选方法的均方根误差为 {{metric:holdout_rmse|.3f}}，平均绝对误差为 {{metric:holdout_mae|.3f}}。周朴素基线的均方根误差为 {{metric:baseline_rmse|.3f}}，相对变化为 {{metric:rmse_improvement_percent|.2f}}%。完成评价后，使用全部已观测数据重新拟合，未来预测期合计需求为 {{metric:forecast_total|.2f}}。预测结果没有附加未经校准的置信区间。"
+    }
+  ]
+}

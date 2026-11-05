@@ -1,0 +1,4 @@
+model,cv_rmse
+seasonal_naive,5.384090815590849
+trend,10.103199865498077
+trend_weekly,2.8877716845303216

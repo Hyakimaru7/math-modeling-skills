@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-11-05T08:41:39.738853+00:00",
+  "tests": 38,
+  "passed": 38,
+  "successful": true,
+  "skipped": 0,
+  "versions": {
+    "python": "3.12.14",
+    "math-modeling-skills": "0.1.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "Jinja2": "3.1.6",
+    "reportlab": "4.4.9",
+    "pypdf": "6.18.0"
+  },
+  "cases": [
+    {
+      "id": "test_workflow.WorkflowTests.test_added_attachment_invalidates_inputs",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_ai_log_change_only_rebuilds_paper_and_review",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_custom_adapter_complete_pdf_and_audit",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_custom_xelatex_with_no_sources",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_cyclic_question_dependency_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_data_path_escape_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_date_gap_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_deleted_pdf_rebuilds_paper",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_duplicate_date_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_duplicate_product_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_exact_linear_series_forecast",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_forecast_complete_pdf_and_audit",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_forecast_test_values_cannot_change_training_selection",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_forged_forecast_actuals_fail_validation",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_human_verification_requires_person_and_date",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_infeasible_problem_retains_status_and_blocks_paper",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_initialization_never_overwrites_nonempty_workspace",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_input_change_marks_stale_and_updates_claims",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_json_nan_cannot_enter_config",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_known_integer_optimum_and_independent_checks",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_missing_figure_recomputes_calculation",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_missing_unit_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_nondictionary_problem_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_nonfinite_data_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_only_prose_change_preserves_solve",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_parameter_binding_reads_declared_input",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_profit_scaling_preserves_solution",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_resource_expansion_does_not_reduce_optimum",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_self_reported_success_cannot_override_failed_checks",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_source_control_characters_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_stop_and_resume_preserves_finished_calculation",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_tampered_result_detected_without_mutation",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_unanswered_question_blocks_paper",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_unbound_prose_number_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_unchanged_run_reuses_all_stages",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_unknown_builtin_task_cannot_claim_coverage",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_unknown_reference_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "test_workflow.WorkflowTests.test_unresolved_assumptions_stop_before_compute",
+      "status": "passed"
+    }
+  ],
+  "scope": "Deterministic execution and artifact contracts. Native LLM routing prompts are provided separately and are not claimed as evaluated."
+}

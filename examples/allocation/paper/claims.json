@@ -1,0 +1,72 @@
+[
+  {
+    "id": "C001",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "objective",
+    "format": ".2f",
+    "value": 605.0,
+    "rendered": "605.00",
+    "result_id": "47db080aee5d5c7f"
+  },
+  {
+    "id": "C002",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "baseline_objective",
+    "format": ".2f",
+    "value": 515.0,
+    "rendered": "515.00",
+    "result_id": "47db080aee5d5c7f"
+  },
+  {
+    "id": "C003",
+    "section": "摘要",
+    "kind": "metric",
+    "path": "improvement_percent",
+    "format": ".2f",
+    "value": 17.475728155339805,
+    "rendered": "17.48",
+    "result_id": "47db080aee5d5c7f"
+  },
+  {
+    "id": "C004",
+    "section": "主方案与基线比较",
+    "kind": "metric",
+    "path": "objective",
+    "format": ".2f",
+    "value": 605.0,
+    "rendered": "605.00",
+    "result_id": "47db080aee5d5c7f"
+  },
+  {
+    "id": "C005",
+    "section": "主方案与基线比较",
+    "kind": "metric",
+    "path": "baseline_objective",
+    "format": ".2f",
+    "value": 515.0,
+    "rendered": "515.00",
+    "result_id": "47db080aee5d5c7f"
+  },
+  {
+    "id": "C006",
+    "section": "主方案与基线比较",
+    "kind": "metric",
+    "path": "improvement_percent",
+    "format": ".2f",
+    "value": 17.475728155339805,
+    "rendered": "17.48",
+    "result_id": "47db080aee5d5c7f"
+  },
+  {
+    "id": "C007",
+    "section": "主方案与基线比较",
+    "kind": "metric",
+    "path": "relaxation_upper_bound",
+    "format": ".2f",
+    "value": 605.0,
+    "rendered": "605.00",
+    "result_id": "47db080aee5d5c7f"
+  }
+]

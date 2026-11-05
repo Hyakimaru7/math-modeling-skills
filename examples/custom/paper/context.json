@@ -1,0 +1,111 @@
+{
+  "title": "自定义适配器示例：一维二次损失最小化",
+  "abstract": "针对等权观测的中心估计问题，构建平方损失最小化模型，得到中心估计 5.00，平方损失为 20.00。通过梯度条件及邻域扰动检查验证结果。本例用于演示自定义适配器与统一论文构建链路。",
+  "keywords": [
+    "自定义适配器",
+    "最小二乘",
+    "独立核验"
+  ],
+  "sections": [
+    {
+      "heading": "模型求解与验证",
+      "text": "平方损失的一阶条件表明，最优中心为样本均值。本次结果为 5.00，对应损失为 20.00。核验代码重新计算梯度并检查两侧扰动的损失，避免只依赖求解函数的返回状态。",
+      "question_ids": [
+        "Q1"
+      ]
+    }
+  ],
+  "problem": {
+    "schema_version": 1,
+    "options": {
+      "seed": 20261105,
+      "time_limit": 30
+    },
+    "contest": {
+      "profile": "training",
+      "year": 2026,
+      "language": "zh",
+      "max_pages": 25
+    },
+    "unresolved": [],
+    "kind": "custom",
+    "title": "自定义适配器示例：一维二次损失最小化",
+    "data_file": "raw/observations.csv",
+    "data_origin": "人工构造的独立适配器示例数据，仅用于验证模型扩展接口。",
+    "units": {
+      "value": "单位"
+    },
+    "questions": [
+      {
+        "id": "Q1",
+        "text": "估计最小化平方损失的中心值，并独立核验一阶最优条件。",
+        "depends_on": []
+      }
+    ],
+    "assumptions": [
+      "各观测具有相同权重。"
+    ],
+    "sources": []
+  },
+  "model": {
+    "family": "quadratic loss",
+    "variables": [
+      {
+        "symbol": "c",
+        "meaning": "中心值",
+        "unit": "单位",
+        "domain": "real"
+      }
+    ],
+    "equations": [
+      "\\min_c L(c)=\\sum_i(y_i-c)^2"
+    ],
+    "assumptions": [
+      "各观测具有相同权重。"
+    ],
+    "selection": "等权平方损失是严格凸函数，样本均值给出唯一极小值。",
+    "baseline": "任意固定中心。",
+    "limitations": [
+      "平方损失对离群值敏感。"
+    ]
+  },
+  "tables": [
+    {
+      "name": "中心估计结果",
+      "columns": [
+        "中心值",
+        "观测数"
+      ],
+      "rows": [
+        [
+          "5",
+          "4"
+        ]
+      ]
+    }
+  ],
+  "figures": [],
+  "sources": [],
+  "result_id": "8e64817628fbc7cd",
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "stationarity",
+        "passed": true,
+        "detail": 0.0
+      },
+      {
+        "name": "loss_recomputed",
+        "passed": true,
+        "detail": 20.0
+      },
+      {
+        "name": "local_perturbation",
+        "passed": true,
+        "detail": "双侧扰动"
+      }
+    ],
+    "result_id": "8e64817628fbc7cd"
+  }
+}
